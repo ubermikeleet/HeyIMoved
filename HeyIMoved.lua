@@ -2,6 +2,7 @@
 local updateInterval = 1     -- time in seconds between checks
 local distanceThreshold = 10 -- distance in yards (from starting point, or from last time alarm sounded)
 local soundId = 1495882      -- sound file id
+-- End Config
 
 
 -- Addon
