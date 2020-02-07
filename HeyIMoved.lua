@@ -1,7 +1,7 @@
 -- Config
 local updateInterval = 1     -- time in seconds between checks
 local distanceThreshold = 10 -- distance in yards (from starting point, or from last time alarm sounded)
-local soundId = 1495882      -- sound file id
+local soundId = 1495882      -- sound file id or file path; for custom soundfile "Interface\\AddOns\\HeyIMoved\\mysound.whatever"
 -- End Config
 
 
@@ -17,7 +17,7 @@ function HeyIMoved:OnUpdate(elapsed)
     local distance = ((lastX - currentX) ^ 2 + (lastY - currentY) ^ 2) ^ 0.5/1.075
     
     if (distance >= distanceThreshold) then
-        PlaySoundFile(soundId)
+        PlaySoundFile(soundId, "Master")
         lastX, lastY = currentX, currentY
     end
 
